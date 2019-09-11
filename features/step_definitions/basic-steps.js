@@ -23,5 +23,7 @@ const { After, Given, Then, When } = require("cucumber");
     })
     When('I click{string}',async function(string){
         return await thisclickOnAddContactBtn()
-
+    })
+    Then('I fill in {string} with {string}', async function(field, content) {
+        return await this.fillFormField(field.toLowerCase(), content)
     })
