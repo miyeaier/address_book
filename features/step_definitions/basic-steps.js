@@ -21,12 +21,4 @@ const { After, Given, Then, When } = require("cucumber");
     Then('I should not see {string}', async function (string) {
         return 'pending'
     })
-    /*Then('I fill in {string} with {string}', async function(field, content) {
-        return await this.fillFormField(field.toLowerCase(), content)
-    })
-    */
-   /* When('I click{string}',async function(string){
-        return await this.clickOnAddContactBtn()
-    })
-
-    */
+    
