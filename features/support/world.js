@@ -23,14 +23,14 @@ class AddressBookWorld {
            expect(actualContent).to.be.eq(expectedContent)
         }
 
-    async clickOnAddContanctBtn(){
+    async clickOnAddContactBtn(){
       const btnSelector ='.add-contact'
       await this.page.waitForSelector(btnSelector)
       await this.page.click(btnSelector)
     }
      
     async fillFormField(field,content){
-        const inputSelector = '#contact-${field}'
+        const inputSelector = `#contact-${field}`
         await this.page.waitForSelector(inputSelector)
         this.inputElement = await this.page.$(inputSelector)
         await this.inputElement.type(content)
