@@ -10,13 +10,13 @@ const { After, Given, Then, When } = require("cucumber");
         return await this.pageHasTextContent(content)
     })
     When('I click {string}', async function(string){
-        return await this.clickOnButton(string)
+        return await this.clickOnAddContactBtn(string)
     })
     Then('I fill in {string} with {string}', async function(field, content) {
         return await this.fillFormField(field.toLowerCase(), content)
     })
-    Then('I should have {int} contact in my adress book', async function(int) {
-        return 'pending'
+    Then('I should have {int} contact in my adress book', async function(contactCount) {
+        return await this.checkContactStorageCount(contactCount)
     })
     Then('I should not see {string}', async function (string) {
         return 'pending'
