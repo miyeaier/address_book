@@ -29,25 +29,13 @@ class AddressBookWorld {
       await this.page.click(btnSelector)
     }
      
-    async fillFormField(field, content){
+    async fillFormField(field, content) {
         const inputSelector = `#contact-${field}`
         await this.page.waitForSelector(inputSelector)
         this.inputElement = await this.page.$(inputSelector)
         await this.inputElement.type(content)
     }
 
-    async checkContactStorageCount(expectedCount) {
-        const actualCount = await this.page.evaluate(
-          () => JSON.parse(window.localStorage.getItem('contacts')).length)
-        expect(actualCount).to.be.eq(expectedCount)
-    }
-
-    async pageDoesNotHaveTextContent(unexpectedContent) {
-        const pageContent= await this.page.content()
-            let actualContent = pageContent.match(unexpectedContent)
-
-        expect(actualContent).to.be.eq(null)
-    }
         btnSelectorFromName(btnName){
          switch (btnName) {
             case 'add-contact':
@@ -60,6 +48,18 @@ class AddressBookWorld {
                  throw `${btnName} button is not defined`
                  break
             }                
+        }
+        async checkContactStorageCount(expectedCount) {
+            const actualCount = await this.page.evaluate(
+              () => JSON.parse(window.localStorage.getItem('contacts')).length)
+            expect(actualCount).to.be.eq(expectedCount)
+        }
+    
+        async pageDoesNotHaveTextContent(unexpectedContent) {
+            const pageContent= await this.page.content()
+                let actualContent = pageContent.match(unexpectedContent)
+    
+            expect(actualContent).to.be.eq(null)
         }
     }
 setWorldConstructor(AddressBookWorld)
