@@ -19,21 +19,19 @@ const renderContacts = () => {
           <img src="https://semantic-ui.com/images/avatar/large/daniel.jpg" class="visible content">
         </div>
         <div class="content">
-            <div class="header">${ contact.name }</div>
+            <div> <i class="users icon"></i>${ contact.name }</div>
 
-            <div class="meta">${ contact.company }</div>
-
-            <div class="number">${ contact.phone }</div>
-
+            <div> <i class="suitcase icon"></i>${ contact.company }</div>
+            <div>
+            <i class="phone square icon"></i>${ contact.phone }
+           </div>
            <div>
            <i class="twitter square icon"></i>
-            <a href="https://www.twitter.com/${ contact.twitter}">@${contact.twitter}</a>
+            <a href="https://www.twitter.com/">${contact.twitter}</a>
             </div>
             
-
-            <i class="envelope open icon"></i>
-            
-            <div class="email">${ contact.email }</div>
+            <div>
+            <i class="envelope open icon"></i>${ contact.email }</div>
             
             <div class="description"> ${ contact.notes }</div>
           </div>
