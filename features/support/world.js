@@ -16,6 +16,7 @@ class AddressBookWorld {
     async closeHomePage() {
         await this.browser.close()
     }
+
     
     async pageHasTextContent(expectedContent) {
             const pageContent = await this.page.content()
@@ -38,27 +39,28 @@ class AddressBookWorld {
 
         btnSelectorFromName(btnName){
          switch (btnName) {
-            case 'add-contact':
+            case 'add contact':
                 return '.add-contact'
                  break
              case 'save contact':
                  return '.save-contact'
                  break
             default:
-                 throw `${btnName} button is not defined`
+                 throw `${btnName} button is not defined.`
                  break
             }                
         }
         async checkContactStorageCount(expectedCount) {
             const actualCount = await this.page.evaluate(
-              () => JSON.parse(window.localStorage.getItem('contacts')).length)
+              () => JSON.parse(window.localStorage.getItem('contacts')).length
+              )
             expect(actualCount).to.be.eq(expectedCount)
         }
     
         async pageDoesNotHaveTextContent(unexpectedContent) {
             const pageContent= await this.page.content()
-                let actualContent = pageContent.match(unexpectedContent)
-    
+            let actualContent = pageContent.match(unexpectedContent)
+            
             expect(actualContent).to.be.eq(null)
         }
     }

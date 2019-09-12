@@ -65,10 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   
       console.log(`Saving the following contact: ${JSON.stringify(contact)}`)
+      addContactForm.reset()
       let contacts = JSON.parse(storage.getItem('contacts')) || []
       contacts.push(contact)
-       storage.setIten('contacts',JSON.stringify(contacts))
+       storage.setItem('contacts',JSON.stringify(contacts))
+       
+       
        renderContacts()
-       addContactForm.reset()
     })
   })
