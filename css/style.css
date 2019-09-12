@@ -1,8 +1,5 @@
 body {background-color:#FFD3A5;
   }
   
-   h1 {font-size:40px;font-style:oblique;}
-   h1{
-    text-align:center;
-    }
-  
+   h1 {font-size:40px;font-style:oblique;text-align:center;}
+  p { text-align:center; font-size:25px;font-style:oblique;}
