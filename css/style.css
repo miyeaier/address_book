@@ -1,4 +1,8 @@
 body {background-color:#FFD3A5;
   }
   
-   h1 {font-family:monospace;}
+   h1 {font-size:40px;font-style:oblique;}
+   h1{
+    text-align:center;
+    }
+  
