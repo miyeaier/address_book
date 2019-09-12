@@ -14,7 +14,7 @@ const renderContacts = () => {
       contacts.forEach(contact => {
         let li = document.createElement('li')
         li.innerHTML = `
-        <div class="ui centered card">
+        <div class="ui centered card ui grid">
         <div class="image">
           <img src="https://semantic-ui.com/images/avatar/large/daniel.jpg" class="visible content">
         </div>
@@ -23,17 +23,19 @@ const renderContacts = () => {
 
             <div class="meta">${ contact.company }</div>
 
+            <div class="number">${ contact.phone }</div>
+
            <div>
            <i class="twitter square icon"></i>
             <a href="https://www.twitter.com/${ contact.twitter}">@${contact.twitter}</a>
             </div>
+            
 
             <i class="envelope open icon"></i>
+            
             <div class="email">${ contact.email }</div>
             
-            <div class="description">
-            ${ contact.notes }
-            </div>
+            <div class="description"> ${ contact.notes }</div>
           </div>
         </div>      
        `
