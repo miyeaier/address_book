@@ -20,9 +20,17 @@ const renderContacts = () => {
         </div>
         <div class="content">
             <div class="header">${ contact.name }</div>
+
             <div class="meta">${ contact.company }</div>
+
+           <div>
+           <i class="twitter square icon"></i>
             <a href="https://www.twitter.com/${ contact.twitter}">@${contact.twitter}</a>
-            <div class="notes">${ contact.email }</div>
+            </div>
+
+            <i class="envelope open icon"></i>
+            <div class="email">${ contact.email }</div>
+            
             <div class="description">
             ${ contact.notes }
             </div>
