@@ -35,7 +35,9 @@ const renderContacts = () => {
               
               <div class="description"> ${ contact.notes }</div>
             </div>
-        </div>      
+            <button class="delete-contact" onClick="this.parentNode.parentNode.removeChild(this.parentNode);">
+             delete contact</button>
+        </div>
        `
         ul.appendChild(li)
       })

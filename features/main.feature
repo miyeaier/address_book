@@ -44,3 +44,5 @@ Scenario: User creates multiple contacts
     And I should see "John Doe"
     And I should see "Jane Doe"
     And I should not see "You have no contacts in your address book"
+    When I click "Delete Contact"
+    Then I will have the chosen contact removed

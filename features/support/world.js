@@ -63,5 +63,11 @@ class AddressBookWorld {
             
             expect(actualContent).to.be.eq(null)
         }
+
+        async clickOnDeleteContactBtn(){
+            const btnSelector = '.delete-contact'
+            await this.page.waitForSelector(btnSelector)
+            await this.page.click(btnSelector)
+          }
     }
 setWorldConstructor(AddressBookWorld)
