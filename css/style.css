@@ -5,6 +5,16 @@ body {background-color:#FFD3A5;
   p { text-align:center; font-size:25px;font-style:oblique;}
 
 
-  .contact-list {
-    align-content: center;
+  #contact-list {
+    display: grid;
+
   }
+
+  #profile-div {
+    display: block;
+    float: left;
+    padding:5px;
+    margin: 5px;
+    min-height: 450px;
+  }
+  

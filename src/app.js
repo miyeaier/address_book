@@ -4,37 +4,37 @@ const renderContacts = () => {
     
     const contacts = JSON.parse(storage.getItem('contacts'))
   
-    let div = document.querySelector('.contact-list')
+    let div = document.querySelector('#contact-list')
   
     if (contacts) {
       div.innerHTML = ''
   
-      const ul = document.createElement('ul')
+      const ul = document.createElement('div')
   
       contacts.forEach(contact => {
-        let li = document.createElement('li')
+        let li = document.createElement('div')
         li.innerHTML = `
-        <div class="ui centered card ui grid">
-        <div class="image">
-          <img src="https://semantic-ui.com/images/avatar/large/daniel.jpg" class="visible content">
-        </div>
-        <div class="content">
-            <div> <i class="users icon"></i>${ contact.name }</div>
-
-            <div> <i class="suitcase icon"></i>${ contact.company }</div>
-            <div>
-            <i class="phone square icon"></i>${ contact.phone }
-           </div>
-           <div>
-           <i class="twitter square icon"></i>
-            <a href="https://www.twitter.com/">${contact.twitter}</a>
-            </div>
-            
-            <div>
-            <i class="envelope open icon"></i>${ contact.email }</div>
-            
-            <div class="description"> ${ contact.notes }</div>
+        <div class="ui card" id="profile-div">
+          <div class="image">
+            <img src="https://semantic-ui.com/images/avatar/large/daniel.jpg" class="visible content">
           </div>
+          <div class="content">
+              <div> <i class="users icon"></i>${ contact.name }</div>
+
+              <div> <i class="suitcase icon"></i>${ contact.company }</div>
+              <div>
+              <i class="phone square icon"></i>${ contact.phone }
+            </div>
+            <div>
+            <i class="twitter square icon"></i>
+              <a href="https://www.twitter.com/">${contact.twitter}</a>
+              </div>
+              
+              <div>
+              <i class="envelope open icon"></i>${ contact.email }</div>
+              
+              <div class="description"> ${ contact.notes }</div>
+            </div>
         </div>      
        `
         ul.appendChild(li)
