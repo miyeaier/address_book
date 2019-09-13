@@ -35,8 +35,8 @@ const renderContacts = () => {
               
               <div class="description"> ${ contact.notes }</div>
             </div>
-            <button class="delete-contact" onClick="this.parentNode.parentNode.removeChild(this.parentNode);">
-             delete contact</button>
+            <button onClick="var c = JSON.parse(localStorage.getItem('contacts')); c.forEach((item, index, array) => item.id === ${contact.id} && array.splice(index, 1) ); localStorage.setItem('contacts', JSON.stringify(c)); window.location.reload()" class="delete-this-contact" class="ui black basic button">Delete this contact</button>
+          
         </div>
        `
         ul.appendChild(li)
@@ -75,14 +75,22 @@ document.addEventListener('DOMContentLoaded', () => {
         notes: notes.value,
         twitter: twitter.value,
       }
+      
   
       console.log(`Saving the following contact: ${JSON.stringify(contact)}`)
-      addContactForm.reset()
       let contacts = JSON.parse(storage.getItem('contacts')) || []
       contacts.push(contact)
-       storage.setItem('contacts',JSON.stringify(contacts))
-       
-       
-       renderContacts()
+      storage.setItem('contacts', JSON.stringify(contacts))
+      renderContacts()
+      addContactForm.reset()
     })
   })
+
+
+  /*
+   var storedNames = JSON.parse(localStorage.getItem("contacts"));
+       var indexToRemove = 1;
+       storedNames.slice(indexToRemove, 1);
+       localStorage.setItem('contacts', JSON.stringify(storedNames));
+       
+  */
